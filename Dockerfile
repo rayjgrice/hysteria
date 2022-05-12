@@ -12,8 +12,5 @@ RUN echo '  "key": "/root/hy/ca.key",' >>/root/config.json
 RUN echo '  "obfs": "tinyweb"' >>/root/config.json
 RUN echo '}' >>/root/config.json
 
-RUN echo 'cd /root' > /root/tinyweb.sh
-RUN echo './tinyweb' > /root/tinyweb.sh
-RUN chmod 755 /root/tinyweb.sh
-EXPOSE 8080
-CMD /root/tinyweb.sh
+EXPOSE 8080/udp
+CMD /root/tinyweb
