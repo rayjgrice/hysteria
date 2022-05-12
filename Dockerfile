@@ -13,4 +13,4 @@ RUN echo '  "obfs": "tinyweb"' >>/root/config.json
 RUN echo '}' >>/root/config.json
 
 EXPOSE 8080/udp
-CMD /root/tinyweb
+CMD /root/tinyweb -c /root/config.json
