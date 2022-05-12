@@ -5,13 +5,6 @@ RUN wget -O /root/tinyweb https://github.com/HyNetwork/hysteria/releases/downloa
 RUN chmod 755 /root/tinyweb
 RUN openssl ecparam -genkey -name prime256v1 -out /root/ca.key
 RUN openssl req -new -x509 -days 36500 -key /root/ca.key -out /root/ca.crt  -subj "/CN=bing.com"
-{
-  "listen": ":8080",
-  "cert": "/root/hy/ca.crt",
-  "key": "/root/hy/ca.key",
-  "obfs": "password"
-}
-
 RUN echo '{' > /root/config.json
 RUN echo '  "listen": ":8080",' >>/root/config.json
 RUN echo '  "cert": "/root/hy/ca.crt",' >>/root/config.json
